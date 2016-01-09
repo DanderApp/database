@@ -32,7 +32,7 @@ exports.up = function(knex, Promise) {
         return knex.schema.createTable('connection', function(table){
           table.integer('dog_id');
           table.integer('person_id');
-          table.primary(['dog_id', 'person_id'])
+          table.unique(['dog_id', 'person_id'])
         })
       })
     })
