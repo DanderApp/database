@@ -11,6 +11,7 @@ exports.up = function(knex, Promise) {
       table.increments().primary().unsigned();
       table.integer('user_id').unsigned().references('id').inTable('user').onDelete('cascade');
       table.integer('petfinder_id');
+      table.boolean('liked');
     })
   })
 };
