@@ -6,6 +6,7 @@ exports.up = function(knex, Promise) {
     table.string('last_name');
     table.string('email');
     table.string('profile_id');
+    table.integer('zipcode')
   }).then(function(){
     return knex.schema.createTable('connection', function(table){
       table.increments().primary().unsigned();
