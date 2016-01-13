@@ -1,5 +1,8 @@
 
 exports.up = function(knex, Promise) {
+  return knex.schema.dropTable('user').then(function() {
+  return knex.schema.dropTable('connection')
+}).then(function(){
   return knex.schema.createTable('user', function(table){
     table.increments().primary().unsigned();
     table.string('first_name');
@@ -7,6 +10,7 @@ exports.up = function(knex, Promise) {
     table.string('email');
     table.string('profile_id');
     table.integer('zipcode')
+  })
   }).then(function(){
     return knex.schema.createTable('connection', function(table){
       table.increments().primary().unsigned();
