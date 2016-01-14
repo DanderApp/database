@@ -4,7 +4,6 @@ exports.seed = function(knex, Promise) {
   return knex('user').del().then(function(){
     return Promise.all([
       knex('user').insert({
-        id: 1,
         first_name: 'Ryan',
         last_name: 'Douglas',
         email: null,
@@ -12,7 +11,6 @@ exports.seed = function(knex, Promise) {
         zipcode: 80201
       }),
       knex('user').insert({
-        id: 2,
         first_name: 'Derik',
         last_name: 'Linch',
         email: null,
@@ -20,7 +18,6 @@ exports.seed = function(knex, Promise) {
         zipcode: 59801
       }),
       knex('user').insert({
-        id: 3,
         first_name: 'Zac',
         last_name: 'Smith',
         email: null,
